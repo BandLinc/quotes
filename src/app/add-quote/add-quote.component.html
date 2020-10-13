@@ -1,1 +1,48 @@
-<p>add-quote works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <form (ngSubmit)="submitQuote()" #addquote="ngForm" novalidate>
+        <div class="form-group">
+          <textarea
+            class="form-control"
+            id="quote"
+            rows="3"
+            placeholder="Please enter the quote..."
+            [(ngModel)]="newquote.quote"
+            name="quote"
+            #quote="ngModel"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Please enter the author"
+            [(ngModel)]="newquote.author"
+            name="author"
+            #author="ngModel"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Please your name"
+            [(ngModel)]="newquote.submitter"
+            name="submitter"
+            #submitter="ngModel"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Quote</button>
+      </form>
+    </div>
+    <div class="col-md-5">
+      <img
+        src="https://i2.wp.com/www.success.com/wp-content/uploads/legacy/sites/default/files/main/articles/encouragingquotes.jpg?fit=1024%2C1024&ssl=1"
+        class="rounded img-fluid float-right"
+        alt="quote"
+        style="width: 50%"
+      />
+    </div>
+  </div>
+</div>
