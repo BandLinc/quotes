@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { ViewQuotesComponent } from './view-quotes/view-quotes.component';
 import { AddQuoteComponent } from './add-quote/add-quote.component';
 import { FormsModule } from '@angular/forms';
+import { DateCountPipe } from './date-count.pipe';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     ViewQuotesComponent,
     AddQuoteComponent,
+    DateCountPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
