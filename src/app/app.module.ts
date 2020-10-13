@@ -3,22 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddQuoteComponent } from './add-quote/add-quote.component';
-import { ViewQuotesComponent } from './view-quotes/view-quotes.component';
 import { HeaderComponent } from './header/header.component';
+import { ViewQuotesComponent } from './view-quotes/view-quotes.component';
+import { AddQuoteComponent } from './add-quote/add-quote.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddQuoteComponent,
+    HeaderComponent,
     ViewQuotesComponent,
-    HeaderComponent
+    AddQuoteComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
