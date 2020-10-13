@@ -1,0 +1,56 @@
+<div class="container">
+  <app-header (featureSelected)="onNavigate($event)"></app-header>
+  <br />
+
+  <div class="row" *ngIf="loadedFeature === 'view-quotes'">
+    <div class="col-md-12">
+      <ul class="list-group" *ngFor="let quote of quotes; let i = index">
+        <div class="row">
+          <div class="col-md-4">
+            <li class="list-group-item">{{ quote.quote }}</li>
+          </div>
+          <div class="col-md-2">
+            <li class="list-group-item">{{ quote.author }}</li>
+          </div>
+          <div class="col-md-2">
+            <button
+              type="button"
+              class="btn btn-success"
+              (click)="quote.upVote = quote.upVote + 1"
+            >
+              Up Vote
+            </button>
+            <p>{{ quote.upVote }}</p>
+          </div>
+          <div class="col-md-2">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="quote.downVote = quote.downVote + 1"
+            >
+              Down Vote
+            </button>
+            <p>{{ quote.downVote }}</p>
+          </div>
+          <div class="col-md-1">
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="deleteQuote(i)"
+            >
+              Delete
+            </button>
+          </div>
+          <div class="col-md-1">
+            <p>{{ quote.submit_date | dateCount }} days</p>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <div class="row" *ngIf="loadedFeature !== 'view-quotes'">
+    <div class="col-md-12">
+      <app-add-quote (addQuote)="addNewQuote($event)"></app-add-quote>
+    </div>
+  </div>
+</div>
