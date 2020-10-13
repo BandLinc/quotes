@@ -7,17 +7,18 @@
       <ul class="list-group" *ngFor="let quote of quotes; let i = index">
         <div class="row">
           <div class="col-md-4">
-            <li class="list-group-item">{{ quote.quote }}</li>
+            <li
+              class="list-group-item"
+              [style.text-decoration]="isMax(i) ? 'underline' : null"
+            >
+              {{ quote.quote }}
+            </li>
           </div>
           <div class="col-md-2">
             <li class="list-group-item">{{ quote.author }}</li>
           </div>
           <div class="col-md-2">
-            <button
-              type="button"
-              class="btn btn-success"
-              (click)="quote.upVote = quote.upVote + 1"
-            >
+            <button type="button" class="btn btn-success" (click)="up_Vote(i)">
               Up Vote
             </button>
             <p>{{ quote.upVote }}</p>

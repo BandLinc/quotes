@@ -8,6 +8,7 @@ import { ViewQuotesComponent } from './view-quotes/view-quotes.component';
 import { AddQuoteComponent } from './add-quote/add-quote.component';
 import { FormsModule } from '@angular/forms';
 import { DateCountPipe } from './date-count.pipe';
+import { UnderlineDirective } from './underline.directive';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { DateCountPipe } from './date-count.pipe';
     ViewQuotesComponent,
     AddQuoteComponent,
     DateCountPipe,
+    UnderlineDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
